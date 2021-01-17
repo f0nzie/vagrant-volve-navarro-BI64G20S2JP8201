@@ -20,6 +20,8 @@ end
   config.vm.network "forwarded_port", guest: 8888, host: 8200
   #config.vm.network "forwarded_port", guest: 8000, host: 8000
 
+  config.vm.synced_folder "navarro/", "/home/vagrant/navarro"
+
   # Provisioning
   config.vm.provision :shell, path: "scripts/provision-vagrant.sh"
   config.vm.provision :shell, path: "scripts/provision-vagrant-user.sh", privileged: false
