@@ -28,6 +28,10 @@ conda install -y theano tensorflow keras
 echo "Install plotnine"
 pip install plotnine
 
+# navarro packages
+pip install welly
+
+
 echo "Setup login directory"
 echo "cd /home/vagrant/data/"  >> /home/vagrant/.bash_profile
 echo "source ~/.bashrc"  >> /home/vagrant/.bash_profile
