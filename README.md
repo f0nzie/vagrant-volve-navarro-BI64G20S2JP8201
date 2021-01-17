@@ -1,6 +1,8 @@
-# jupyter-vagrant-box
+# jupyter-vagrant-box, `bionic64`
 
-This is a simple Vagrant virtual machine. It contains a setup for running **Jupyter** notebook with Python 3. The setup includes the [Anaconda Python distribution](https://www.anaconda.com/distribution/) which means a lot of data science packages like [NumPy](http://www.numpy.org/), [pandas](https://pandas.pydata.org/), [matplotlib](https://matplotlib.org/), [Bokeh](https://bokeh.pydata.org/en/latest/), [plotnine](), and many more are readily included in the setup. 
+This is a VirtualBox VM that is automatically generated using Vagrant.
+
+Machine Learning and Deep Learning packages installed are: Scikit-Learn, NLTK, [Keras](https://keras.io/), [TensorFlow](https://www.tensorflow.org/) and [Theano](). A [Vagrant](https://www.vagrantup.com/) file is used to generate this VM based on Ubuntu 18.04 (`bionic64`).
 
 ### Prerequisites
 
@@ -8,17 +10,43 @@ You need the following installed on your computer (WIndows, macOS or any flavor 
 - [Virtualbox 6+](https://www.virtualbox.org/)
 - [Vagrant](https://www.vagrantup.com/)
 
-### Usage
+### Getting Started
 
-- Copy `Vagrantfile` and the `scripts` folder to the directory where your data science projects lives.
-- Run the shell command `vagrant up` in the folder you copied the files to.
-- Wait until the virtual machine is setup and ready. (never mind the red colored output)
-- Point your browser to [http://localhost:8000](http://localhost:8000)
-- **Optional:** If you need to install additional Python packages (or do something similar) you can log into the virtual machine by calling `vagrant ssh`.
+*   This VM should work in Windows, macOS and Linux (tested in Debian-10 Buster as host)
 
-**That's it.** I hope this is useful for some people. Have fun!
+*   VirtualBox (version 6+) is required
+
+*   [Download and install Vagrant](http://www.vagrantup.com/downloads.html) 
+
+*   Clone the virtual machine specs with:
+
+```
+git clone \
+	https://github.com/f0nzie/vagrant-deeplearning-BI64G10DLS2J383AE8200.git
+```
+
+*   To generate the virtual machine, change to the folder where this repo has been cloned and type on your local terminal:
+
+    ```
+    vagrant up
+    ```
+
+* Browse to Jupyter with:  http://127.0.0.1:8200/. Try the different notebooks in there.
+
+*   To access the virtual machine console or terminal, type:
+
+    ```
+    vagrant ssh
+    ```
 
 
+*   When finished, power off the virtual machine with:
+
+    ```
+    vagrant halt
+    ```
+
+    
 
 ## Machine Learning packages
 
@@ -40,30 +68,31 @@ You need the following installed on your computer (WIndows, macOS or any flavor 
 *   seaborn 0.10.1
 *   plotnine 0.7.1
 
-### Credit
+### Credits
 
 *   Thanks to [antonpirker](https://github.com/antonpirker/jupyter-vagrant-box) for original Vagrant box
 
-*   Thank's to [Florian Demmer](https://github.com/fdemmer) for helping with the Vagrant provisioning.
+*   Thank's to [Florian Demmer](https://github.com/fdemmer) for the Vagrant provisioning.
 
 
 
 ## Codes virtual machine
 
-`v.name   = "vagrant-bi64shsujpythtfke-apyenv202007"`
+`vm.name   = "vagrant-deeplearning-BI64G10DLS2J383AE8200"`
 
-*   `bi64`: Ubuntu Bionic 64-bit
-*   `shsu`: provisioning scripts for system root and user
-*   `jpy`: Jupyter server
-*   `thtfke`: Theano, TensorFlow, Keras
-*   `apyenv`: Anaconda version 2020.07 with `pyenv`
+*   `BI64`: Ubuntu Bionic 64-bit
+*   `S2`: two provisioning scripts for system root and user
+*   `G10`: initial disk size of 10 GB. Increased to 20 GB from Vagrantfile
+*   `DL`: deep learning
+*   `J383`: Jupyter server on Python 3.8.3
+*   `AE`: Anaconda environment
 
 
-* Long name: `vagrant-bi64shsujpythtfke-apyenv202007`
-* Short name: `BI64G10DLS2J383AE8200`
-* Host name: `BI64G10AE8200`
-* VM name: `vagrant-bi64shsujpythtfke-apyenv202007` or `vagrant-BI64G10DLS2J383AE8200`
 * Repo name: `vagrant-deeplearning-BI64G10DLS2J383AE8200`
 
+* VM name: `vagrant-deeplearning-BI64G10DLS2J383AE8200`
 
+* Host name: `BI64G10AE8200`
+
+    
 
