@@ -1,10 +1,26 @@
 # TODO
-* Increase disk size from 10 GB to 50 GB
-* Is there a way to execute Jupyter server as user?
-* Why shell commands cannot be executed from Jupyter with `!`? Error `/bin/bash: conda: command not found`
-* Should we use `pyenv` to install `conda` environments?
+* ~~Increase disk size from 10 GB to 20 GB~~
+* Is there a way to execute Jupyter server as user? **Answer**: Yes. But it would be a different configuration. An alternative is `jupyterhub`.
+* Why shell commands cannot be executed from Jupyter with `!`? Error `/bin/bash: conda: command not found`. **Answer**: Because `jupyter.service` is lacking the path to jupyter binaries in `~/.pyenv/versions/anaconda3-2020.07`. Adding this to the path using `Environment=` should fix it.
+* Should we use `pyenv` to install `conda` environments? **Answer**: Both have different objectives. Although `pyenv` is good at managing Python versions and environments, and also is able to install Anaconda Python versions, if we want the full spectrum of `conda` environment commands, we should stick to `conda`.
 
-# 20210115
+
+
+# 20210116
+
+*   Fix problem with `jupyter.services` and new versions of Anaconda3 installed by `pyenv`. Add path to pyenv binaries using`Environment=` in the configuration file:
+    ![image-20210116202513784](assets/NEWS/image-20210116202513784.png)
+*   Add some deep learning libraries:
+    ![image-20210116202601913](assets/NEWS/image-20210116202601913.png)
+*   Disk size increased to 20 GB:
+    ![image-20210116202700014](assets/NEWS/image-20210116202700014.png)
+
+# 20210115-night
+
+* Skip installing deep learning packages
+* Comment the lines of the VM name to see if this affects running conda from the shell.
+# 20210115-day
+* Ignore binary `Anaconda3-2020.07-Linux-x86_64.sh` for now.
 * Machine needs to increase disk size above 10 GB.
 * Change Jupyter server port to 8200.
 * Install default R from VM terminal. It installs R-3.4.4 with `sudo apt install r-base`. Need to use another repo for `R-3.5.3` or higher.
