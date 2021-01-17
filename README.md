@@ -1,8 +1,30 @@
-# jupyter-vagrant-box, `bionic64`
+# vagrant-volve-navarro-BI64G20S2JP8201
 
-This is a VirtualBox VM that is automatically generated using Vagrant.
+This is reproducible work of Machine Learning and Data Science applied to data from the Volve field.
 
-Machine Learning and Deep Learning packages installed are: Scikit-Learn, NLTK, [Keras](https://keras.io/), [TensorFlow](https://www.tensorflow.org/) and [Theano](). A [Vagrant](https://www.vagrantup.com/) file is used to generate this VM based on Ubuntu 18.04 (`bionic64`).
+## Features
+
+This is a VirtualBox Virtual Machine (VM) that is automatically generated using Vagrant.
+
+A few Machine Learning and Deep Learning packages have been installed, such as Scikit-Learn, NLTK, [Keras](https://keras.io/), [TensorFlow](https://www.tensorflow.org/) and [Theano](). A [Vagrant](https://www.vagrantup.com/) file is used to generate this VM based on Ubuntu 18.04 (`bionic64`).
+
+Additional packages required for this phase of the ML and DS work are [welly](), [pandas](), [numpy](), [seaborn](), and [lasio]().
+
+### Base Machine
+
+*   Operating system: Ubuntu 18.04 `bionic64`
+*   Virtualization: VirtualBox and Vagrant
+*   ML, DS: Python, Jupyter server, Anaconda3
+
+### Software versions used to generate virtual machine
+
+*   VirtualBox 6.1.16 r40961 (Linux)
+
+*   Vagrant 2.2.6 (Linux)
+
+*   Virtual Studio Code 1.51.1 (Linux)
+
+    
 
 ### Prerequisites
 
@@ -22,7 +44,7 @@ You need the following installed on your computer (WIndows, macOS or any flavor 
 
 ```
 git clone \
-	https://github.com/f0nzie/vagrant-deeplearning-BI64G10DLS2J383AE8200.git
+	https://github.com/f0nzie/vagrant-volve-navarro-BI64G20S2JP8201
 ```
 
 *   To generate the virtual machine, change to the folder where this repo has been cloned and type on your local terminal:
@@ -31,7 +53,7 @@ git clone \
     vagrant up
     ```
 
-* Browse to Jupyter with:  http://127.0.0.1:8200/. Try the different notebooks in there.
+* Browse to Jupyter with:  http://127.0.0.1:8201/. Try the different notebooks in there.
 
 *   To access the virtual machine console or terminal, type:
 
@@ -46,20 +68,23 @@ git clone \
     vagrant halt
     ```
 
-    
 
-## Machine Learning packages
+
+
+## Packages
+
+### Machine Learning packages
 
 *   nltk 3.5
 *   sklearn 0.23.1
 
-## Deep Learning packages
+### Deep Learning packages
 
 *   TensorFlow 2.2.0
 *   Keras 2.4.3
 *   Theano 1.0.4
 
-## Data Science packages
+### Data Science packages
 
 *   numpy 1.18.5
 *   matplotlib 3.2.2
@@ -67,6 +92,11 @@ git clone \
 *   bokeh 2.1.1
 *   seaborn 0.10.1
 *   plotnine 0.7.1
+
+### Other
+
+*   welly
+*   lasio
 
 ### Credits
 
@@ -78,21 +108,29 @@ git clone \
 
 ## Codes virtual machine
 
-`vm.name   = "vagrant-deeplearning-BI64G10DLS2J383AE8200"`
+`vm.name   = "vagrant-volve-navarro-BI64G20S2JP8201"`
 
+`config.vm.hostname = "BI64G20S2JP8201"`
+
+*   Field data: *Volve*
+*   Author: Luis Enrique *Navarro* Morales
 *   `BI64`: Ubuntu Bionic 64-bit
+*   `G20`: initial disk size of 10 GB. Increased to 20 GB from Vagrantfile
 *   `S2`: two provisioning scripts for system root and user
-*   `G10`: initial disk size of 10 GB. Increased to 20 GB from Vagrantfile
-*   `DL`: deep learning
-*   `J383`: Jupyter server on Python 3.8.3
-*   `AE`: Anaconda environment
+*   `J`: Jupyter server
+*   `P8201`: Port for Jupyter notebooks = 8201
 
 
-* Repo name: `vagrant-deeplearning-BI64G10DLS2J383AE8200`
 
-* VM name: `vagrant-deeplearning-BI64G10DLS2J383AE8200`
+## References
 
-* Host name: `BI64G10AE8200`
+
+* GitHub Repo URL: https://github.com/f0nzie/vagrant-volve-navarro-BI64G20S2JP8201
 
     
+
+    
+
+      
+
 
