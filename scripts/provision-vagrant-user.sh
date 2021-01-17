@@ -20,9 +20,11 @@ echo "Switch to ./data folder"
 cd /home/vagrant/data
 echo "Activate pyenv on ./data folder with anaconda3-2020.07"   
 pyenv local anaconda3-2020.07       #? set folder with specified environment Python 3.6.4
-conda list
+# conda list
+
 echo "Install deep learning packages"
 conda install -y theano tensorflow keras 
+
 echo "Install plotnine"
 pip install plotnine
 
