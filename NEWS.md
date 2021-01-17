@@ -1,16 +1,15 @@
 
-
 ## TODO
+* Get LAS files and deposit them in folder `raw_data`
+* Add folder to export generated data in first notebook.
 
-* ~~Increase disk size from 10 GB to 20 GB~~
-* Is there a way to execute Jupyter server as user? **Answer**: Yes. But it would be a different configuration. An alternative is `jupyterhub`.
-* Why shell commands cannot be executed from Jupyter with `!`? Error `/bin/bash: conda: command not found`. **Answer**: Because `jupyter.service` is lacking the path to jupyter binaries in `~/.pyenv/versions/anaconda3-2020.07`. Adding this to the path using `Environment=` should fix it.
-* Should we use `pyenv` to install `conda` environments? **Answer**: Both have different objectives. Although `pyenv` is good at managing Python versions and environments, and also is able to install Anaconda Python versions, if we want the full spectrum of `conda` environment commands, we should stick to `conda`.
-
-
+# 20210117
+* Provisioning package `welly` as user (`provision-vagrant-user.sh`)
+* Add flexible folders for raw data and exported/generated data for all notebooks. Find the project root and then build the paths from there.
+* Add shared folder `navarro`
+* New branch `navarro` with three notebooks and a data file `LWD_F14.csv`.
 
 # 20210116
-
 *   Fix problem with `jupyter.services` and new versions of Anaconda3 installed by `pyenv`. Add path to pyenv binaries using`Environment=` in the configuration file:
     ![image-20210116202513784](assets/NEWS/image-20210116202513784.png)
 *   Add some deep learning libraries:
@@ -19,7 +18,6 @@
     ![image-20210116202700014](assets/NEWS/image-20210116202700014.png)
 
 # 20210115-night
-
 * Skip installing deep learning packages
 * Comment the lines of the VM name to see if this affects running conda from the shell.
 # 20210115-day
@@ -100,3 +98,10 @@
     ![image-20210114194819010](assets/NEWS/image-20210114194819010.png)
 * Tested installing a different `pyenv` with Anaconda.
 * Tested installation of `theano`. Success!
+
+
+## TODO
+* ~~Increase disk size from 10 GB to 20 GB~~
+* Is there a way to execute Jupyter server as user? **Answer**: Yes. But it would be a different configuration. An alternative is `jupyterhub`.
+* Why shell commands cannot be executed from Jupyter with `!`? Error `/bin/bash: conda: command not found`. **Answer**: Because `jupyter.service` is lacking the path to jupyter binaries in `~/.pyenv/versions/anaconda3-2020.07`. Adding this to the path using `Environment=` should fix it.
+* Should we use `pyenv` to install `conda` environments? **Answer**: Both have different objectives. Although `pyenv` is good at managing Python versions and environments, and also is able to install Anaconda Python versions, if we want the full spectrum of `conda` environment commands, we should stick to `conda`.
