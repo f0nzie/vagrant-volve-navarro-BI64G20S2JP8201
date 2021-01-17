@@ -1,4 +1,7 @@
 
+
+* Script stopped working. It want the VM name to be specified. Seems to be a vonflict with an older VM.
+
 ```
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
