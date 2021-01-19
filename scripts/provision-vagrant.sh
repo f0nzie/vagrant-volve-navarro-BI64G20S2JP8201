@@ -16,6 +16,10 @@ echo "Setup home directory"
 ln -s /vagrant/ /home/vagrant/data
 chown vagrant.vagrant /home/vagrant/data
 
+#curl -O /usr/local/bin/install2.r https://github.com/eddelbuettel/littler/raw/master/inst/examples/install2.r \
+# curl -O /usr/local/bin/install2.r https://github.com/eddelbuettel/littler/raw/master/inst/examples/install2.r
+wget https://github.com/eddelbuettel/littler/raw/master/inst/examples/install2.r -O /usr/local/bin/install2.r
+chmod +x /usr/local/bin/install2.r
 echo "Setup Jupyter auto start"
 cat >/etc/systemd/system/jupyter.service <<EOL
 [Unit]
