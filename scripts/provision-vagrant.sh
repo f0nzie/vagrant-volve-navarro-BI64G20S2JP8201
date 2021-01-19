@@ -20,6 +20,32 @@ chown vagrant.vagrant /home/vagrant/data
 # curl -O /usr/local/bin/install2.r https://github.com/eddelbuettel/littler/raw/master/inst/examples/install2.r
 wget https://github.com/eddelbuettel/littler/raw/master/inst/examples/install2.r -O /usr/local/bin/install2.r
 chmod +x /usr/local/bin/install2.r
+Rscript -e "install.packages(c('littler', 'docopt'), repo = '$MRAN')"
+apt install r-cran-littler
+
+# Set date on MRAN
+# Install R packages
+install2.r --error --repo https://mran.microsoft.com/snapshot/$BUILD_DATE \
+  Rcpp \
+  base64enc \
+  digest \
+  evaluate \
+  glue \
+  highr \
+  htmltools \
+  jsonlite \
+  knitr \
+  magrittr \
+  markdown \
+  mime \
+  rmarkdown \
+  rprojroot \
+  stringi \
+  tinytex \
+  xfun \
+  yaml
+
+
 echo "Setup Jupyter auto start"
 cat >/etc/systemd/system/jupyter.service <<EOL
 [Unit]
