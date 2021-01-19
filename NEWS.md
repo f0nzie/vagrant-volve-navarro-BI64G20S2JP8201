@@ -1,9 +1,45 @@
+[toc]
+
+
 
 ## TODO
+
 * Get LAS files and deposit them in folder `raw_data`
-* Add folder to export generated data in first notebook.
+* ~~Add folder to export generated data in first notebook.~~
+* ~~Install RStudio server and expose port 8787~~
+* ~~Install R packages for Rmarkdown notebooks~~
+* ~~Change ports to something we can remember~~
+* ~~Banner to show Jupyter and RStudio ports~~
+* ~~Use `install2.r` to install R packages~~
+
+
+
+# 20210119
+
+*   Change ports to 8801 and 8701 for Jupyter and RStudio.
+    ![image-20210119110946523](assets/NEWS/image-20210119110946523.png)
+*   Change welcome banner to:
+    ![image-20210119111008974](assets/NEWS/image-20210119111008974.png)
+
+
+
+# 20210118
+
+
+
+*   Use `install2.r`, `MRAN` and `BUILD_DATE` to install R packages
+    ![image-20210119111427101](assets/NEWS/image-20210119111427101.png)
+*   Set environment variables for `BUILD_DATE` and `MRAN` formed URL
+    ![image-20210119111333735](assets/NEWS/image-20210119111333735.png)
+
+*   Use `wget` instead of `curl` to download and place `install2.r` file
 
 # 20210117
+
+* Do not download RStudio installer every time we provision the VM.
+    ![image-20210117131706078](assets/NEWS/image-20210117131706078.png)
+* Installed `rstudio-server-1.3.1093-amd64.deb`. User is `vagrant`, password is `vagrant`
+    ![image-20210117131733447](assets/NEWS/image-20210117131733447.png)
 * Provisioning package `welly` as user (`provision-vagrant-user.sh`)
 * Add flexible folders for raw data and exported/generated data for all notebooks. Find the project root and then build the paths from there.
 * Add shared folder `navarro`
@@ -99,8 +135,8 @@
 * Tested installing a different `pyenv` with Anaconda.
 * Tested installation of `theano`. Success!
 
+## Q&A
 
-## TODO
 * ~~Increase disk size from 10 GB to 20 GB~~
 * Is there a way to execute Jupyter server as user? **Answer**: Yes. But it would be a different configuration. An alternative is `jupyterhub`.
 * Why shell commands cannot be executed from Jupyter with `!`? Error `/bin/bash: conda: command not found`. **Answer**: Because `jupyter.service` is lacking the path to jupyter binaries in `~/.pyenv/versions/anaconda3-2020.07`. Adding this to the path using `Environment=` should fix it.
