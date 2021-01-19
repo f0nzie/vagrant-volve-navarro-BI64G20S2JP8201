@@ -13,3 +13,31 @@
 * Original port for Jupyter with browser at http://localhost:8888/
 
 
+
+
+
+
+### packages not available in R-3.4.4
+
+```
+install2.r --error --repo https://mran.microsoft.com/snapshot/$BUILD_DATE \
+  Rcpp \
+  base64enc \
+  digest \
+  evaluate \
+  glue \
+  highr \
+  htmltools \
+  jsonlite \
+  knitr \
+  magrittr \
+  markdown \
+  mime \
+  rmarkdown \
+  rprojroot \
+  stringi \
+#   tinytex \
+#   xfun \
+  yaml
+```
+
