@@ -1,4 +1,7 @@
 #!/bin/bash
+#> 108   3.4.4 2018-03-15 08:04:27       Someone to Lean On
+BUILD_DATE="2018-03-15"
+MRAN=https://mran.microsoft.com/snapshot/${BUILD_DATE}
 
 echo "Install system requirements"
 apt-get --quiet update
