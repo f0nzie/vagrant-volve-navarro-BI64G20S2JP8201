@@ -16,8 +16,9 @@ config.vm.provider "virtualbox" do |vm|
 end  
 
   # Port forwarding
-  config.vm.network "forwarded_port", guest: 8888, host: 8201
-  #config.vm.network "forwarded_port", guest: 8000, host: 8000
+  config.vm.network "forwarded_port", guest: 8888, host: 8801
+  config.vm.network "forwarded_port", guest: 8787, host: 8701
+
 
   config.vm.synced_folder "navarro/", "/home/vagrant/navarro"
 
@@ -29,8 +30,9 @@ end
   config.vm.post_up_message = "*****************************************\n\n" \
                               "    Welcome to your data science box!\n\n"  \
                               "    To access your Jupyter Notebook\n" \
-                              "    point your browser to:\n\n" \
-                              "        http://localhost:8201\n\n" \
-                              "    Have fun!\n\n" \
+                              "    point your browser to:       http://localhost:8801\n\n" \
+                              "    To access RStudio\n" \
+                              "    point your browser to:       http://localhost:8701\n\n" \
+                              "    Enjoy!\n\n" \
                               "*****************************************"
 end
