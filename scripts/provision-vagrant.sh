@@ -16,6 +16,19 @@ echo "Setup home directory"
 ln -s /vagrant/ /home/vagrant/data
 chown vagrant.vagrant /home/vagrant/data
 
+# R and RStudio installation
+rstudio_server_installer="rstudio-server-1.3.1093-amd64.deb"
+apt install -y lib32gcc1 lib32stdc++6 libc6-i386 libclang-6.0-dev libclang-common-6.0-dev \
+	libclang-dev libclang1-6.0 libgc1c2 libllvm6.0 libobjc-7-dev libobjc4
+apt-get install -y r-base 
+apt-get install -y r-base-dev
+apt-get install -y gdebi-core
+if [[ ! -f $rstudio_server_installer ]]; then
+	wget https://download2.rstudio.org/server/bionic/amd64/$rstudio_server_installer
+fi
+yes|gdebi $rstudio_server_installer
+popd
+
 #curl -O /usr/local/bin/install2.r https://github.com/eddelbuettel/littler/raw/master/inst/examples/install2.r \
 # curl -O /usr/local/bin/install2.r https://github.com/eddelbuettel/littler/raw/master/inst/examples/install2.r
 wget https://github.com/eddelbuettel/littler/raw/master/inst/examples/install2.r -O /usr/local/bin/install2.r
