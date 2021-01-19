@@ -20,6 +20,14 @@ chown vagrant.vagrant /home/vagrant/data
 # curl -O /usr/local/bin/install2.r https://github.com/eddelbuettel/littler/raw/master/inst/examples/install2.r
 wget https://github.com/eddelbuettel/littler/raw/master/inst/examples/install2.r -O /usr/local/bin/install2.r
 chmod +x /usr/local/bin/install2.r
+
+sudo apt-get -y install  \
+    libxml2-dev \
+    libz-dev \
+    # libv8-dev \
+    # libfontconfig1-dev \
+    libcairo2-dev
+
 Rscript -e "install.packages(c('littler', 'docopt'), repo = '$MRAN')"
 apt install r-cran-littler
 
