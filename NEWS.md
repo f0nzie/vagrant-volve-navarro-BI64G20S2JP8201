@@ -4,6 +4,7 @@
 
 ## TODO
 
+* Make a project folder (sync'ed) for Jupyter and RStudio
 * Get LAS files and deposit them in folder `raw_data`
 * ~~Add folder to export generated data in first notebook.~~
 * ~~Install RStudio server and expose port 8787~~
@@ -14,11 +15,34 @@
 
 
 
+## Q&A
+
+* Is there a way to increase the disk size without lots of OS commands? 
+    **Answer**: Yes. We will need to use a Vagrant experimental feature `VAGRANT_EXPERIMENTAL="disks"`.
+* Is there a way to execute the Jupyter server as a user? 
+    **Answer**: Yes. But it would be a different configuration. An alternative is `jupyterhub`.
+* Why shell commands cannot be executed from Jupyter with `!`? Or we get this message: `Error /bin/bash: conda: command not found`. 
+    **Answer**: Because `jupyter.service` is lacking the path to the Jupyter binaries in `~/.pyenv/versions/anaconda3-2020.07`. Adding this to the path using `Environment=` should fix it.
+* Should we use `pyenv` to install `conda` environments? 
+    **Answer**: Both have different objectives. Although `pyenv` is good at managing Python versions and environments, and also is able to install Anaconda Python versions, if we want the full spectrum of `conda` environment commands, we should stick to `conda`.
+
+
+
 # 20210119
+
+*   Push branch with `rstudio-server`. Not yet merged with `main`.
+
+    ```
+    git push --set-upstream origin 210117-add_rstudio_server
+    ```
+
+    
 
 *   Change ports to 8801 and 8701 for Jupyter and RStudio.
     ![image-20210119110946523](assets/NEWS/image-20210119110946523.png)
+
 *   Change welcome banner to:
+
     ![image-20210119111008974](assets/NEWS/image-20210119111008974.png)
 
 
@@ -49,8 +73,10 @@
 *   Fix problem with `jupyter.services` and new versions of Anaconda3 installed by `pyenv`. Add path to pyenv binaries using`Environment=` in the configuration file:
     ![image-20210116202513784](assets/NEWS/image-20210116202513784.png)
 *   Add some deep learning libraries:
+    
     ![image-20210116202601913](assets/NEWS/image-20210116202601913.png)
 *   Disk size increased to 20 GB:
+    
     ![image-20210116202700014](assets/NEWS/image-20210116202700014.png)
 
 # 20210115-night
@@ -94,12 +120,14 @@
 
     \* Disk still 9.7 GB affects installation of many packages.
 
-* Installing `theano`. Disk space after
-    ![image-20210114233352895](assets/NEWS/image-20210114233352895.png)
-
-* Installing `tensorflow`and `keras`. Disk space after
-    ![image-20210114232635418](assets/NEWS/image-20210114232635418.png)
-
+* Installing `theano`. Disk space after:
+    
+![image-20210114233352895](assets/NEWS/image-20210114233352895.png)
+    
+* Installing `tensorflow`and `keras`. Disk space after:
+    
+![image-20210114232635418](assets/NEWS/image-20210114232635418.png)
+    
 * Disk still 9.7 GB
 
 * Add shared `notebooks` folder
@@ -129,15 +157,13 @@
     <img src="assets/NEWS/image-20210114201154211.png" alt="image-20210114201154211"  />
 
 * Deactivate plugin `vagrant-disksize`. Back to 10 GB disk.
+
 * Try increasing disk size from 10 GB to 20 GB. Crashed the VM. New size is recognized. Using plugin `vagrant-disksize`.
+
 * Installing mxnet on folder data. Success!
+    
     ![image-20210114194819010](assets/NEWS/image-20210114194819010.png)
 * Tested installing a different `pyenv` with Anaconda.
+
 * Tested installation of `theano`. Success!
 
-## Q&A
-
-* ~~Increase disk size from 10 GB to 20 GB~~
-* Is there a way to execute Jupyter server as user? **Answer**: Yes. But it would be a different configuration. An alternative is `jupyterhub`.
-* Why shell commands cannot be executed from Jupyter with `!`? Error `/bin/bash: conda: command not found`. **Answer**: Because `jupyter.service` is lacking the path to jupyter binaries in `~/.pyenv/versions/anaconda3-2020.07`. Adding this to the path using `Environment=` should fix it.
-* Should we use `pyenv` to install `conda` environments? **Answer**: Both have different objectives. Although `pyenv` is good at managing Python versions and environments, and also is able to install Anaconda Python versions, if we want the full spectrum of `conda` environment commands, we should stick to `conda`.
