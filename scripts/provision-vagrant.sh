@@ -29,8 +29,6 @@ fi
 yes|gdebi $rstudio_server_installer
 popd
 
-#curl -O /usr/local/bin/install2.r https://github.com/eddelbuettel/littler/raw/master/inst/examples/install2.r \
-# curl -O /usr/local/bin/install2.r https://github.com/eddelbuettel/littler/raw/master/inst/examples/install2.r
 wget https://github.com/eddelbuettel/littler/raw/master/inst/examples/install2.r -O /usr/local/bin/install2.r
 chmod +x /usr/local/bin/install2.r
 
