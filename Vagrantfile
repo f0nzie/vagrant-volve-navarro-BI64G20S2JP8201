@@ -4,12 +4,13 @@
 $description = "
   ubuntu/bionic64
   HDD: 40 GB; RAM: 5120 MB; CPU: 2
-  provision-vagrant.sh, provision-vagrant-user.sh
+  Provisioning: provision-vagrant.sh, provision-vagrant-user.sh
   Jupyter server          8801
   RStudio server          8701
   synced: navarro
   Jupyter auto start: systemd/system/jupyter.service
-  pyenv anaconda3-2020.07
+  conda version: anaconda3-2020.07
+  Python Environment Manager: pyenv 
   Python 3.83
   R-3.4.4
   rstudio-server-1.3.1093-amd64.deb
