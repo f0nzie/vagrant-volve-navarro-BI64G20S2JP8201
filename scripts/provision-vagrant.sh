@@ -32,7 +32,7 @@ popd
 wget https://github.com/eddelbuettel/littler/raw/master/inst/examples/install2.r -O /usr/local/bin/install2.r
 chmod +x /usr/local/bin/install2.r
 
-sudo apt-get -y install  \
+apt-get -y install  \
     libxml2-dev \
     libz-dev \
     # libv8-dev \
@@ -62,7 +62,8 @@ install2.r --error --repo https://mran.microsoft.com/snapshot/$BUILD_DATE \
   stringi \
   tinytex \
   xfun \
-  yaml
+  yaml \
+  reticulate
 
 
 echo "Setup Jupyter auto start"
