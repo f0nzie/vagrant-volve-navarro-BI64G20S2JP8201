@@ -1,5 +1,21 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
+
+$description = "
+  ubuntu/bionic64
+  provision-vagrant.sh, provision-vagrant-user.sh
+  Jupyter server          8801
+  RStudio server          8701
+  synced: navarro
+  Jupyter auto start: systemd/system/jupyter.service
+  pyenv anaconda3-2020.07
+  Python 3.83
+  R-3.4.4
+  rstudio-server-1.3.1093-amd64.deb
+  theano tensorflow keras
+  plotnine welly
+  "
+
 VAGRANT_EXPERIMENTAL="disks"
 
 Vagrant.configure("2") do |config|
@@ -12,7 +28,7 @@ Vagrant.configure("2") do |config|
 config.vm.provider "virtualbox" do |vm|
     vm.cpus   = 2
     vm.memory = 5120
-    vm.name   = "vagrant-volve-navarro-BI64G20S2JP8201"
+    vm.customize ["modifyvm", :id, "--description", $description]
 end  
 
   # Port forwarding
