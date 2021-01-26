@@ -28,6 +28,7 @@ Vagrant.configure("2") do |config|
 config.vm.provider "virtualbox" do |vm|
     vm.cpus   = 2
     vm.memory = 5120
+    vm.name   = "BI64G20-volve-navarro-S2JP8201"
     vm.customize ["modifyvm", :id, "--description", $description]
 end  
 
