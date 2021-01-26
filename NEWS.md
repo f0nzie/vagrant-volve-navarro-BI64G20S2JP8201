@@ -3,6 +3,8 @@
 
 
 ## TODO
+
+* Provision R packages required to create Rmarkdown notebooks
 * ~~Use newer Vagrant box `ubunut/bionic` with 40 GB disk~~
 * Make a project folder (sync'ed) for Jupyter and RStudio
 * ~~Get LAS files and deposit them in folder `raw_data`~~
@@ -12,7 +14,6 @@
 * ~~Change ports to something we can remember~~
 * ~~Text banner to show Jupyter and RStudio ports at `vagrant up`~~
 * ~~Use `install2.r` to install R packages~~
-
 
 
 
@@ -30,6 +31,8 @@
 
 
 # 20210125
+
+*   Install R package `reticulate`
 
 *   Copy LAS files from Volve dataset.
 
