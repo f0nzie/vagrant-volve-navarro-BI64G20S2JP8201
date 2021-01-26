@@ -3,15 +3,16 @@
 
 
 ## TODO
-
+* ~~Use newer Vagrant box `ubunut/bionic` with 40 GB disk~~
 * Make a project folder (sync'ed) for Jupyter and RStudio
-* Get LAS files and deposit them in folder `raw_data`
+* ~~Get LAS files and deposit them in folder `raw_data`~~
 * ~~Add folder to export generated data in first notebook.~~
 * ~~Install RStudio server and expose port 8787~~
 * ~~Install R packages for Rmarkdown notebooks~~
 * ~~Change ports to something we can remember~~
-* ~~Banner to show Jupyter and RStudio ports~~
+* ~~Text banner to show Jupyter and RStudio ports at `vagrant up`~~
 * ~~Use `install2.r` to install R packages~~
+
 
 
 
@@ -24,9 +25,28 @@
 * Why shell commands cannot be executed from Jupyter with `!`? Or we get this message: `Error /bin/bash: conda: command not found`. 
     **Answer**: Because `jupyter.service` is lacking the path to the Jupyter binaries in `~/.pyenv/versions/anaconda3-2020.07`. Adding this to the path using `Environment=` should fix it.
 * Should we use `pyenv` to install `conda` environments? 
-    **Answer**: Both have different objectives. Although `pyenv` is good at managing Python versions and environments, and also is able to install Anaconda Python versions, if we want the full spectrum of `conda` environment commands, we should stick to `conda`.
+    **Answer**: Both, pyenv and conda, have different objectives. Although `pyenv` is good at managing Python versions and environments, and also is able to install Anaconda Python versions, if we want the full spectrum of `conda` environment commands, we should stick to `conda`.
 
 
+
+# 20210125
+
+*   Copy LAS files from Volve dataset.
+
+    ```
+    1.7M  WL_RAW_BHPR-GR-MECH_MWD_1.LAS
+    728K  WL_RAW_BHPR-GR-MECH_MWD_2.LAS
+    1.3M  WL_RAW_BHPR-GR-MECH_MWD_3.LAS
+     11M  WL_RAW_BHPR-GR-MECH_TIME_MWD_1.LAS
+    6.0M  WL_RAW_BHPR-GR-MECH_TIME_MWD_2.LAS
+    9.2M  WL_RAW_BHPR-GR-MECH_TIME_MWD_3.LAS
+    ```
+
+    
+
+*   Files originally located under `Well_logs_pr_WELL/15_9-F-14/02.LWD_EWL`.
+
+*   Copied to folder `./navarro/raw_data`
 
 # 20210119
 
@@ -121,11 +141,13 @@
     \* Disk still 9.7 GB affects installation of many packages.
 
 * Installing `theano`. Disk space after:
-    
+  
+
 ![image-20210114233352895](assets/NEWS/image-20210114233352895.png)
     
 * Installing `tensorflow`and `keras`. Disk space after:
-    
+  
+
 ![image-20210114232635418](assets/NEWS/image-20210114232635418.png)
     
 * Disk still 9.7 GB
@@ -161,7 +183,7 @@
 * Try increasing disk size from 10 GB to 20 GB. Crashed the VM. New size is recognized. Using plugin `vagrant-disksize`.
 
 * Installing mxnet on folder data. Success!
-    
+  
     ![image-20210114194819010](assets/NEWS/image-20210114194819010.png)
 * Tested installing a different `pyenv` with Anaconda.
 
