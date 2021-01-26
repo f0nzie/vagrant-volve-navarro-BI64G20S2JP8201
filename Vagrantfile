@@ -3,6 +3,7 @@
 
 $description = "
   ubuntu/bionic64
+  HDD: 40 GB; RAM: 5120 MB; CPU: 2
   provision-vagrant.sh, provision-vagrant-user.sh
   Jupyter server          8801
   RStudio server          8701
@@ -16,14 +17,10 @@ $description = "
   plotnine welly
   "
 
-VAGRANT_EXPERIMENTAL="disks"
-
 Vagrant.configure("2") do |config|
   # Config
   config.vm.box = "ubuntu/bionic64"
   config.vm.hostname = "BI64G20S2JP8201"
-  # config.vm.provider :virtualbox
-  config.disksize.size = '20GB'
 
 config.vm.provider "virtualbox" do |vm|
     vm.cpus   = 2
